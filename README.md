@@ -99,10 +99,10 @@ _nft_add_set = <nftables> add set <table_family> <table> <addr_set> \{ type <add
 
 >>> BECOMES >>>
 
-_nft_add_set = <nftables> add set <table_family> <table> <addr_set> \{ type <addr_type>\; flags interval\; \}
+_nft_add_set = <nftables> add set <table_family> <table> <addr_set> \{ type <addr_type>\; flags interval\; auto-merge\; \}
 ```
 
-Then restart `fail2ban` to delete and recreate the address sets. You will still see errors logged when fail2ban tries to block individual IP addresses which overlap with prefixes set by `fail2ban-block-ip-range`, but these are harmless.
+Then restart `fail2ban` to delete and recreate the address sets.
 
 ## Example:
 
